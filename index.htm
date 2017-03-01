@@ -8,26 +8,34 @@
 
 	<header>
 		<img src="/img/logo.png" />
-		<h1>Super Dooper Rock, Paper, Scissors</h1>
+		<h1>Super Awesome Rock, Paper, Scissors</h1>
 	</header>
 
 	<section>
-		<div class="container">
-			<div class="widget">
-				<h3>Login to play</h3>
-				
-				<p>
-					Please enter your username and password
-				</p>
+		<form action="login.asp" method="post">
+			<div class="container">
+				<div class="widget">
+					<h2>Login to play</h2>
+					
+					<p class="grey">
+						Please enter your username and password
+					</p>
 
-				<label>username</label>
-				<input type="text" placeholder="enter your username" />
-				<br>
-				<label>password</label>
-				<input type="password" placeholder="enter your password" />
+					<div class="input-container">
+						<label for="username">username</label>
+						<input type="text" name="username" id="username" placeholder="enter your username" />
+					</div>
+					<div class="input-container">
+						<label for="password">password</label>
+						<input type="password" name="password" id="password" placeholder="enter your password" />
+					</div>
 
+					<a href="#" class="forgot">Forgot Password</a>
+					<button class="login-btn">Login</button>
+
+				</div>
 			</div>
-		</div>
+		</form>
 	</section>
 
 	<script src="/js/libs/require.js" data-main="/js/boot.js"></script>

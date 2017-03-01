@@ -7,6 +7,9 @@ body, html {
   font-family: 'Roboto', sans-serif;
   text-align: center; }
 
+*:focus {
+  outline: none; }
+
 header {
   background-color: #ffea00;
   margin-bottom: 50px;
@@ -26,9 +29,51 @@ header {
     background-color: #fff;
     border: 1px solid #aaa;
     box-shadow: 0px 0px 110px -20px rgba(0, 0, 0, 0.2);
-    min-height: 150px; }
+    min-height: 150px;
+    padding-bottom: 30px; }
 
-[data-controller="login"] section h3 {
-  font-weight: 600; }
+.grey {
+  color: #999; }
+
+button {
+  transition: opacity linear 0.1s; }
+  button:hover {
+    opacity: 0.7;
+    cursor: pointer; }
+  button:active {
+    transform: translateY(2px); }
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 12px; }
+
+[data-controller="login"] section h2 {
+  font-weight: 400; }
+[data-controller="login"] section p {
+  font-size: 14px; }
+[data-controller="login"] section .input-container {
+  margin-bottom: 10px; }
+  [data-controller="login"] section .input-container label {
+    padding-right: 10px;
+    font-size: 14px; }
+  [data-controller="login"] section .input-container input {
+    padding: 10px 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    border-right: 2px solid #aaa;
+    border-bottom: 2px solid #aaa; }
+    [data-controller="login"] section .input-container input:focus {
+      border-color: #0099ff; }
+[data-controller="login"] section .forgot {
+  font-size: 12px; }
+[data-controller="login"] section .login-btn {
+  background-color: #ffea00;
+  border: 1px solid #ccc;
+  border-right: 2px solid #c7b700;
+  border-bottom: 2px solid #c7b700;
+  padding: 10px 10px;
+  border-radius: 15px;
+  min-width: 100px;
+  margin-left: 20px; }
 
 /*# sourceMappingURL=styles.css.map */
