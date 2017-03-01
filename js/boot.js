@@ -23,6 +23,7 @@ _test('controller = ' + (controller.length > 0));
 // Load the controller
 if (controller) {
 	require(['controllers/' + controller], function (c) {
+		//launch init function inside the page controller.
 		c.init();
 	});
 }
