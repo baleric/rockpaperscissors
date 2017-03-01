@@ -12,7 +12,7 @@
 	</header>
 
 	<section>
-		<form action="login.asp" method="post">
+		<form action="validation.asp" method="post">
 			<div class="container">
 				<div class="widget">
 					<h2>Login to play</h2>

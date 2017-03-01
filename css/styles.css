@@ -76,4 +76,9 @@ button {
   min-width: 100px;
   margin-left: 20px; }
 
+[data-controller="play"] section h2 {
+  font-weight: 400; }
+[data-controller="play"] section p {
+  font-size: 14px; }
+
 /*# sourceMappingURL=styles.css.map */
