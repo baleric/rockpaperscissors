@@ -8,5 +8,29 @@
 			font-size:14px;		
 		}
 		
+
+		.player-select {
+			.rock,
+			.paper,
+			.scissors {
+				background-color: #ffea00;
+				padding: 10px;
+				margin:5px;
+				border-radius: 50%;
+				display: inline-block;
+				cursor: pointer;
+
+				&:hover {
+					transition: all linear 0.1s;
+					padding: 15px;
+					margin:0px;
+					background-color: #ffcc00;
+				}
+
+				&:active {
+					
+				}
+			}
+		}
 	}
 }

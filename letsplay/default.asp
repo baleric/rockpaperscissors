@@ -17,8 +17,15 @@
 				<h2>Welcome <%=session("loggedinusername")%>,</h2>
 				
 				<p class="grey">
-					Please enter your username and password
+					Please select a move...
 				</p>				
+
+				<div class="player-select">
+					<div class="rock"><img src="/img/rock.png" /></div>
+					<div class="paper"><img src="/img/paper.png" /></div>
+					<div class="scissors"><img src="/img/scissors.png" /></div>
+				</div>
+
 
 			</div>
 		</div>
