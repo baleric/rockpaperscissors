@@ -1,13 +1,19 @@
 body,html {
 	margin: 0px;
 	padding: 0px;
-	background-color: #e2e2e2;
+	background-color: #d2d2d2;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
 }
 
-*:focus {
-	outline : none;
+* {
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	  -moz-user-select: none;     /* Firefox all */
+	  -ms-user-select: none;      /* IE 10+ */
+
+	&:focus {
+		outline : none;
+	}
 } 
 
 header {
@@ -58,4 +64,23 @@ button {
 ::-webkit-input-placeholder {
 	color: #ccc;
 	font-size: 12px;
+}
+
+.message {
+	margin:0px auto;
+	width: 500px;
+
+	.success {
+		border:1px solid green;
+		color:green;
+		padding: 5px;
+		background-color: #d4ffd0;
+	}
+
+	.error {
+		border:1px solid red;
+		color:red;
+		padding: 5px;
+		background-color: #ffd0d0;
+	}
 }

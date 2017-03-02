@@ -12,13 +12,32 @@
 	</header>
 
 	<section>
-		<form action="validation.asp" method="post">
+		<form action="/validation/" method="post">
 			<div class="container">
 				<div class="widget">
 					<h2>Login to play</h2>
 					
+					<div class="message">
+						
+						<%if request.querystring("message") = "logout" then%>
+							<div class="success">You have been logged out.</div>
+						<%end if%>
+
+						<%if request.querystring("message") = "novalue" then%>
+							<div class="error">You need to type a username and password.</div>
+						<%end if%>
+
+						<%if request.querystring("message") = "incorrectDetails" then%>
+							<div class="error"><strong>You have entered incorrect details... </strong>
+								<br>
+								<span class="grey">protip : labels = values.</span>
+							</div>
+						<%end if%>
+
+					</div>
+
 					<p class="grey">
-						Please enter your username and password
+						Please enter your details below.
 					</p>
 
 					<div class="input-container">

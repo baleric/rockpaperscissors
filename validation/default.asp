@@ -8,12 +8,12 @@
 	'Check for logout
 	if request.QueryString("id") = "logout" then
 		session.Abandon
-		response.Redirect("/index.htm#logout")
+		response.Redirect("/?message=logout")
 	end if
 	
 	'simple server side checking of validation
 	if request.Form("username") = "" or request.Form("password") = "" then
-		 response.Redirect("/index.htm#novalue") 
+		 response.Redirect("/?message=novalue") 
 	end if
 	
 	'stop some simple sql injection
@@ -42,9 +42,9 @@
 	
 	
 	If Recordset.EOF Then
-		response.Redirect("/index.htm#incorrectDetails")
+		response.Redirect("/?message=incorrectDetails")
 	else
-		session("letsplaycomeRPS") = true
+		session("letsplaysomeRPS") = true
 		session("loggedinusername") = txtUsername
 		response.Redirect("/letsPlay/")
 	end if

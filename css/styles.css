@@ -3,12 +3,19 @@
 body, html {
   margin: 0px;
   padding: 0px;
-  background-color: #e2e2e2;
+  background-color: #d2d2d2;
   font-family: 'Roboto', sans-serif;
   text-align: center; }
 
-*:focus {
-  outline: none; }
+* {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */ }
+  *:focus {
+    outline: none; }
 
 header {
   background-color: #ffea00;
@@ -47,6 +54,20 @@ button {
   color: #ccc;
   font-size: 12px; }
 
+.message {
+  margin: 0px auto;
+  width: 500px; }
+  .message .success {
+    border: 1px solid green;
+    color: green;
+    padding: 5px;
+    background-color: #d4ffd0; }
+  .message .error {
+    border: 1px solid red;
+    color: red;
+    padding: 5px;
+    background-color: #ffd0d0; }
+
 [data-controller="login"] section h2 {
   font-weight: 400; }
 [data-controller="login"] section p {
@@ -77,9 +98,30 @@ button {
   margin-left: 20px; }
 
 [data-controller="play"] section .widget {
-  min-height: 500px; }
+  min-height: 500px;
+  position: relative; }
+[data-controller="play"] section .select-move {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  background-image: url("/img/selectMove.png");
+  width: 175px;
+  height: 129px; }
+[data-controller="play"] section .game-timer {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  min-width: 20px;
+  display: inline-block; }
+[data-controller="play"] section .overflow-table {
+  width: 100%;
+  overflow: auto; }
 [data-controller="play"] section h2 {
   font-weight: 400; }
+  [data-controller="play"] section h2 a {
+    font-size: 12px; }
 [data-controller="play"] section p {
   font-size: 14px; }
 [data-controller="play"] section .time-up {
@@ -127,7 +169,40 @@ button {
       background-color: green !important; }
 [data-controller="play"] section .results {
   display: none; }
-[data-controller="play"] section .results-table .text-left {
-  text-align: left; }
+[data-controller="play"] section .winner {
+  display: none;
+  position: absolute;
+  top: 225px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  height: 75px;
+  color: white; }
+  [data-controller="play"] section .winner .win-message {
+    padding-bottom: 0px;
+    margin-bottom: 0px; }
+  [data-controller="play"] section .winner p {
+    padding-top: 0px;
+    margin-top: 0px; }
+[data-controller="play"] section .results-table {
+  display: none;
+  margin-top: 30px;
+  margin-left: 20px; }
+  [data-controller="play"] section .results-table tr th {
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 3px 8px; }
+  [data-controller="play"] section .results-table .text-left {
+    text-align: left; }
+  [data-controller="play"] section .results-table .player-table .rock, [data-controller="play"] section .results-table .player-table .paper, [data-controller="play"] section .results-table .player-table .scissors {
+    width: 25px;
+    margin-right: 1px; }
+  [data-controller="play"] section .results-table .win {
+    background-color: green; }
+  [data-controller="play"] section .results-table .loss {
+    background-color: red; }
 
 /*# sourceMappingURL=styles.css.map */

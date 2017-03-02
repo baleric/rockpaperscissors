@@ -1,3 +1,10 @@
+<% 
+	if session("letsplaysomeRPS") = false then
+		response.Redirect("/?message=needlogin") 
+	end if
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +21,11 @@
 	<section>
 		<div class="container">
 			<div class="widget">
-				<h2>Welcome <%=session("loggedinusername")%>,</h2>
+
+				<div class="select-move">					
+				</div>
+
+				<h2>Welcome <%=session("loggedinusername")%> <span><a href="/validation/?id=logout">(logout)</a></h2>
 				
 				<p class="grey">
 					Please select a move... <span class="game-timer"></span>
@@ -33,17 +44,40 @@
 				</div>
 
 				<p class="grey results">Results</p>
-				<table class="results-table">
-					<tr>
-						<td class="text-left">Player</td>
-					</tr>
-					<tr>
-						<td class="text-left">Computer</td>
-					</tr>
-				</table>
+
+				<div class="overflow-table">
+					<table class="results-table">
+
+						<tr class="headers">	
+							<th></th>
+							<th>streak</th>
+							<th>wins</th>
+						</tr>
+						<tr class="player-table">
+							<td class="text-left">Player</td>
+							<td class="streak">0</td>
+							<td class="count">0</td>
+						</tr>
+						<tr class="computer-table">
+							<td class="text-left">Computer</td>
+							<td class="streak">0</td>
+							<td class="count">0</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="winner">
+					<span></span>
+					<p class="grey">
+						Click anywhere to restart.
+					</p>
+				</div>
 
 			</div>
 		</div>
+
+		
+
 	</section>
 
 	<script src="/js/libs/require.js" data-main="/js/boot.js"></script>

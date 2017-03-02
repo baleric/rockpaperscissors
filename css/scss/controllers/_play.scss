@@ -3,10 +3,39 @@
 
 		.widget {
 			min-height: 500px;
+			position: relative;
+		}
+
+		.select-move {
+			position: absolute;
+			top: 70px;
+			left:0px;
+			background-image: url('/img/selectMove.png');
+			width: 175px;
+			height: 129px;
+		}
+
+		.game-timer {
+			background-color: #333;
+			border-radius: 10px;
+			padding: 5px;
+			color: white;
+			text-align: center;
+			min-width: 20px;
+			display: inline-block;
+		}
+
+		.overflow-table {
+			width: 100%;
+			overflow: auto;
 		}
 
 		h2 {
 			font-weight: 400;
+
+			a {
+				font-size:12px;
+			}
 		}
 
 		p {
@@ -93,10 +122,67 @@
 			display: none;
 		}
 
+
+		.winner {
+			display: none;
+			position: absolute;
+			top: 225px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0,0,0,0.8);
+			height: 75px;
+			color: white;
+
+			.win-message {
+				padding-bottom: 0px;
+				margin-bottom: 0px;
+			}
+
+			p {
+				padding-top: 0px;
+				margin-top: 0px;
+			}
+		}
+
 		.results-table {
+			display: none;
+			margin-top:30px;
+			margin-left:20px;
+
+			tr {
+
+				th {
+					background-color: #333;
+					color: white;
+					font-size:12px;
+					font-weight: 300;
+					padding: 3px 8px;
+				}
+			}
+
 			.text-left {
 				text-align: left;
-			}	
+			}
+
+			.player-table {
+				.rock,.paper,.scissors {
+					width: 25px;
+					margin-right: 1px;
+				}
+			}
+
+			.computer-table {
+
+			}
+
+			.win {
+				background-color: green;
+			}
+
+			.loss {
+				background-color: red;
+			}
 		}
 		
 	}
