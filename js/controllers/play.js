@@ -19,12 +19,14 @@ define(["jquery"] , function ($) {
     var playerArray = ['rock','paper','scissors'];
     //set the start of the array so computer is equal to the user array count..
     var computerArray = ['rock','paper','scissors'];
-    
+    //set the rules for the paper rock scissors game (opposites)
+    var gameLogic = {rock: "scissors", paper: "rock", scissors: "paper"}; 
 
     //init function for page
     function init() {
         //make sure the init function is established
         _test($('body').data('controller') + "init = true");
+
 
         initBindings();
         playTimer();
@@ -32,8 +34,10 @@ define(["jquery"] , function ($) {
 
     //establish page bindings and events.
     function initBindings() {
-        $(document).on('click','.player-move',function(){
-            //pass move to players
+        $(document).on('click','.player-move:not(".unselected,.selected")',function(){
+
+            $(this).addClass('selected');
+            //pass move to players to process
             playersMove($(this).data('move'));
             //reset timer
             playTimer(false);
@@ -62,9 +66,7 @@ define(["jquery"] , function ($) {
                     _test('counter = 0 ' + (startcount == 0));
                     $('.game-timer').html('<span class="time-up">Times Up, <strong>You Lost :( </strong></span>')
                     clearInterval(counter);
-                    
                 }
-
             },1000);
         }
 
@@ -75,22 +77,14 @@ define(["jquery"] , function ($) {
         //selet a random array value based on previous moves
         var randomValue = Math.floor((Math.random() * playerArray.length));
         _test('players history move = ' + playerArray[randomValue])
-    
-        var computerMove;
-        //here we keep pull a random value from the users array, and replace the computers move with the counter move.
-        switch(playerArray[randomValue]) {
-            case 'scissors':
-                computerMove = 'rock'
-                break;
-            case 'rock':
-                computerMove = 'paper'
-                break;
-            default:
-                computerMove = 'scissors';
-        }
+        
+        //use the gamelogc variable to reverse the value of the random user selection
+        var computerMove = gameLogic[playerArray[randomValue]]
 
         computerArray.push(computerMove)      
         _test('computer history = ' + computerArray.toString());
+
+        $('.computer-move[data-move="'+computerMove+'"]').addClass('selected')
 
         results(playerMove,computerMove)
        
@@ -108,15 +102,34 @@ define(["jquery"] , function ($) {
     //do results
     function results(playerMove,computerMove){
         
-        $('.move-sets').show();
-
-        _test('Player =' + playerArray.toString());
+        _test('Player =' + playerMove);
         _test('Computer =' + computerMove);
 
+        var winner = "?";
 
-        $('.players-move').append(playerMove + ',');
-        $('.computers-move').append(computerMove + ',');
+        var compSelected = $('.computer-move.selected');
+        var playSelected = $('.player-move.selected');
 
+        //determine draw to stop other logic.        
+        if (playerMove === computerMove) {
+            winner = "draw";
+            compSelected.addClass('win');
+            playSelected.addClass('win');
+        } else {
+
+            if (computerMove === gameLogic[playerMove]){
+                winner = "player"
+                compSelected.addClass('loss');
+                playSelected.addClass('win');
+            } else {
+                winner = "computer"
+                compSelected.addClass('win');
+                playSelected.addClass('loss');
+            }
+        }
+
+        $('.computer-move:not(".selected"), .player-move:not(".selected")').addClass('unselected')
+        
     }
 
 

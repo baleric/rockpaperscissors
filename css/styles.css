@@ -76,25 +76,58 @@ button {
   min-width: 100px;
   margin-left: 20px; }
 
+[data-controller="play"] section .widget {
+  min-height: 500px; }
 [data-controller="play"] section h2 {
   font-weight: 400; }
 [data-controller="play"] section p {
   font-size: 14px; }
 [data-controller="play"] section .time-up {
   color: red; }
-[data-controller="play"] section .player-select .player-move {
-  background-color: #ffea00;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer; }
-  [data-controller="play"] section .player-select .player-move:hover {
-    transition: all linear 0.1s;
-    padding: 15px;
-    margin: 0px;
-    background-color: #ffcc00; }
-[data-controller="play"] section .move-sets {
+[data-controller="play"] section .move-select {
+  height: 100px;
+  margin-top: 30px; }
+  [data-controller="play"] section .move-select.comp-mover {
+    margin-top: 100px; }
+  [data-controller="play"] section .move-select .player-move {
+    background-color: #ffea00;
+    transition: all linear 0.2s;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer; }
+    [data-controller="play"] section .move-select .player-move.selected {
+      transform: translateY(50px); }
+    [data-controller="play"] section .move-select .player-move.unselected {
+      opacity: 0.6;
+      cursor: inherit !important; }
+      [data-controller="play"] section .move-select .player-move.unselected:hover {
+        background-color: #ffea00 !important; }
+    [data-controller="play"] section .move-select .player-move:hover {
+      background-color: #ffcc00; }
+  [data-controller="play"] section .move-select .computer-move {
+    background-color: #182efa;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all linear 0.2s; }
+    [data-controller="play"] section .move-select .computer-move.selected {
+      transform: translateY(-50px); }
+    [data-controller="play"] section .move-select .computer-move.unselected {
+      opacity: 0.6; }
+  [data-controller="play"] section .move-select .loss {
+    background-color: red; }
+    [data-controller="play"] section .move-select .loss:hover {
+      background-color: red !important; }
+  [data-controller="play"] section .move-select .win {
+    background-color: green; }
+    [data-controller="play"] section .move-select .win:hover {
+      background-color: green !important; }
+[data-controller="play"] section .results {
   display: none; }
+[data-controller="play"] section .results-table .text-left {
+  text-align: left; }
 
 /*# sourceMappingURL=styles.css.map */

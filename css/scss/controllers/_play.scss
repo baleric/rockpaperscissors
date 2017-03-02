@@ -1,5 +1,10 @@
 [data-controller="play"] {
 	section {
+
+		.widget {
+			min-height: 500px;
+		}
+
 		h2 {
 			font-weight: 400;
 		}
@@ -12,19 +17,37 @@
 			color: red;
 		}
 
-		.player-select {
+		.move-select {
+			height: 100px;
+			margin-top: 30px;
+
+			&.comp-mover {
+				margin-top: 100px;
+			}
+
 			.player-move {
 				background-color: #ffea00;
+				transition: all linear 0.2s;				
 				padding: 10px;
 				margin:5px;
 				border-radius: 50%;
 				display: inline-block;
 				cursor: pointer;
 
+				&.selected {
+					transform: translateY(50px)
+				}
+
+				&.unselected {
+					opacity: 0.6;
+					cursor: inherit !important;
+
+					&:hover {
+					background-color: #ffea00 !important;
+					}
+				}
+
 				&:hover {
-					transition: all linear 0.1s;
-					padding: 15px;
-					margin:0px;
 					background-color: #ffcc00;
 				}
 
@@ -32,10 +55,49 @@
 
 				}
 			}
+
+			.computer-move {
+				background-color: #182efa;
+				padding: 10px;
+				margin:5px;
+				border-radius: 50%;
+				display: inline-block;
+				transition: all linear 0.2s;				
+
+
+				&.selected {
+					transform: translateY(-50px)
+				}
+
+				&.unselected {
+					opacity: 0.6;
+				}
+			}
+
+			.loss {
+				background-color: red;
+				&:hover {
+					background-color: red !important;
+				}
+			}
+
+			.win {
+				background-color: green;
+				&:hover {
+					background-color: green !important;
+				}
+			}
 		}
 
-		.move-sets {
+		.results {
 			display: none;
 		}
+
+		.results-table {
+			.text-left {
+				text-align: left;
+			}	
+		}
+		
 	}
 }

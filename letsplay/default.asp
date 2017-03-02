@@ -20,16 +20,27 @@
 					Please select a move... <span class="game-timer"></span>
 				</p>				
 
-				<div class="player-select">
+				<div class="move-select">
 					<div data-move="rock" class="player-move"><img src="/img/rock.png" /></div>
 					<div data-move="paper" class="player-move"><img src="/img/paper.png" /></div>
 					<div data-move="scissors" class="player-move"><img src="/img/scissors.png" /></div>
 				</div>
 
-				<div class="move-sets">
-					Players Move = <span class="players-move"></span><br>
-					Computers Move = <span class="computers-move"></span>
+				<div class="move-select comp-mover">
+					<div data-move="rock" class="computer-move"><img src="/img/com-rock.png" /></div>
+					<div data-move="paper" class="computer-move"><img src="/img/com-paper.png" /></div>
+					<div data-move="scissors" class="computer-move"><img src="/img/com-scissors.png" /></div>
 				</div>
+
+				<p class="grey results">Results</p>
+				<table class="results-table">
+					<tr>
+						<td class="text-left">Player</td>
+					</tr>
+					<tr>
+						<td class="text-left">Computer</td>
+					</tr>
+				</table>
 
 			</div>
 		</div>
