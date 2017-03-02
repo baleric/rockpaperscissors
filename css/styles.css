@@ -80,21 +80,21 @@ button {
   font-weight: 400; }
 [data-controller="play"] section p {
   font-size: 14px; }
-[data-controller="play"] section .player-select .rock,
-[data-controller="play"] section .player-select .paper,
-[data-controller="play"] section .player-select .scissors {
+[data-controller="play"] section .time-up {
+  color: red; }
+[data-controller="play"] section .player-select .player-move {
   background-color: #ffea00;
   padding: 10px;
   margin: 5px;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer; }
-  [data-controller="play"] section .player-select .rock:hover,
-  [data-controller="play"] section .player-select .paper:hover,
-  [data-controller="play"] section .player-select .scissors:hover {
+  [data-controller="play"] section .player-select .player-move:hover {
     transition: all linear 0.1s;
     padding: 15px;
     margin: 0px;
     background-color: #ffcc00; }
+[data-controller="play"] section .move-sets {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

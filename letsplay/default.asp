@@ -17,15 +17,19 @@
 				<h2>Welcome <%=session("loggedinusername")%>,</h2>
 				
 				<p class="grey">
-					Please select a move...
+					Please select a move... <span class="game-timer"></span>
 				</p>				
 
 				<div class="player-select">
-					<div class="rock"><img src="/img/rock.png" /></div>
-					<div class="paper"><img src="/img/paper.png" /></div>
-					<div class="scissors"><img src="/img/scissors.png" /></div>
+					<div data-move="rock" class="player-move"><img src="/img/rock.png" /></div>
+					<div data-move="paper" class="player-move"><img src="/img/paper.png" /></div>
+					<div data-move="scissors" class="player-move"><img src="/img/scissors.png" /></div>
 				</div>
 
+				<div class="move-sets">
+					Players Move = <span class="players-move"></span><br>
+					Computers Move = <span class="computers-move"></span>
+				</div>
 
 			</div>
 		</div>

@@ -8,11 +8,12 @@
 			font-size:14px;		
 		}
 		
+		.time-up {
+			color: red;
+		}
 
 		.player-select {
-			.rock,
-			.paper,
-			.scissors {
+			.player-move {
 				background-color: #ffea00;
 				padding: 10px;
 				margin:5px;
@@ -28,9 +29,13 @@
 				}
 
 				&:active {
-					
+
 				}
 			}
+		}
+
+		.move-sets {
+			display: none;
 		}
 	}
 }
