@@ -45,7 +45,7 @@
 		response.Redirect("/?message=incorrectDetails")
 	else
 		session("letsplaysomeRPS") = true
-		session("loggedinusername") = txtUsername
+		session("loggedinusername") = recordset("firstname")
 		response.Redirect("/letsPlay/")
 	end if
 	

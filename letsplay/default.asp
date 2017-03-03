@@ -51,7 +51,7 @@
 						<tr class="headers">	
 							<th></th>
 							<th>streak</th>
-							<th>wins</th>
+							<th class="wins">wins</th>
 						</tr>
 						<tr class="player-table">
 							<td class="text-left">Player</td>
@@ -69,7 +69,7 @@
 				<div class="winner">
 					<span></span>
 					<p class="grey">
-						Click anywhere to restart.
+						Click to restart.
 					</p>
 				</div>
 
