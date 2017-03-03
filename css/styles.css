@@ -38,35 +38,31 @@ header {
     box-shadow: 0px 0px 110px -20px rgba(0, 0, 0, 0.2);
     min-height: 150px;
     padding-bottom: 30px; }
-
-.grey {
-  color: #999; }
-
-button {
-  transition: opacity linear 0.1s; }
-  button:hover {
-    opacity: 0.7;
-    cursor: pointer; }
-  button:active {
-    transform: translateY(2px); }
-
-::-webkit-input-placeholder {
-  color: #ccc;
-  font-size: 12px; }
-
-.message {
-  margin: 0px auto;
-  width: 500px; }
-  .message .success {
-    border: 1px solid green;
-    color: green;
-    padding: 5px;
-    background-color: #d4ffd0; }
-  .message .error {
-    border: 1px solid red;
-    color: red;
-    padding: 5px;
-    background-color: #ffd0d0; }
+    .container .widget .grey {
+      color: #999; }
+    .container .widget button {
+      transition: opacity linear 0.1s; }
+      .container .widget button:hover {
+        opacity: 0.7;
+        cursor: pointer; }
+      .container .widget button:active {
+        transform: translateY(2px); }
+    .container .widget ::-webkit-input-placeholder {
+      color: #ccc;
+      font-size: 12px; }
+    .container .widget .message {
+      margin: 0px auto;
+      width: 500px; }
+      .container .widget .message .success {
+        border: 1px solid green;
+        color: green;
+        padding: 5px;
+        background-color: #d4ffd0; }
+      .container .widget .message .error {
+        border: 1px solid red;
+        color: red;
+        padding: 5px;
+        background-color: #ffd0d0; }
 
 [data-controller="login"] section h2 {
   font-weight: 400; }
@@ -82,7 +78,8 @@ button {
     border-radius: 15px;
     border: 1px solid #ccc;
     border-right: 2px solid #aaa;
-    border-bottom: 2px solid #aaa; }
+    border-bottom: 2px solid #aaa;
+    transition: all linear 0.3s; }
     [data-controller="login"] section .input-container input:focus {
       border-color: #0099ff; }
 [data-controller="login"] section .forgot {
@@ -95,7 +92,13 @@ button {
   padding: 10px 10px;
   border-radius: 15px;
   min-width: 100px;
-  margin-left: 20px; }
+  margin-left: 30px;
+  transition: all linear 0.3s; }
+  [data-controller="login"] section .login-btn.btn-error {
+    background-color: red;
+    border-right: 2px solid #a80000;
+    border-bottom: 2px solid #a80000;
+    color: white; }
 
 [data-controller="play"] section .widget {
   min-height: 500px;

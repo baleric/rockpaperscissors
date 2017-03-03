@@ -22,6 +22,7 @@
 				border:1px solid #ccc;
 				border-right:2px solid #aaa;
 				border-bottom:2px solid #aaa;
+				transition: all linear 0.3s;
 
 				&:focus {
 					border-color: #0099ff;
@@ -41,7 +42,15 @@
 			padding: 10px 10px;
 			border-radius: 15px;		
 			min-width: 100px;
-			margin-left:20px;
+			margin-left:30px;
+			transition: all linear 0.3s;
+
+			&.btn-error {
+				background-color: red;
+				border-right:2px solid #a80000;
+				border-bottom:2px solid #a80000;
+				color:white;
+			}
 		}
 	}
 }

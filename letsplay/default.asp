@@ -1,5 +1,7 @@
 <% 
+	'if session equals false, redirect'
 	if session("letsplaysomeRPS") = false then
+		'let user know to login again'
 		response.Redirect("/?message=needlogin") 
 	end if
 

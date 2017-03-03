@@ -27,6 +27,10 @@
 							<div class="error">You need to type a username and password.</div>
 						<%end if%>
 
+						<%if request.querystring("message") = "needlogin" then%>
+							<div class="error">You need to login to play.</div>
+						<%end if%>
+
 						<%if request.querystring("message") = "incorrectDetails" then%>
 							<div class="error"><strong>You have entered incorrect details... </strong>
 								<br>
